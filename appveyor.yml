@@ -35,6 +35,8 @@ build: false
 test_script:
   # test package
   - "cd C:\\Python%PYTHON%"
+  - cd
+  - dir
   - "python -c \"import py_stringmatching as sm; ed = sm.Levenshtein(); print(ed.get_raw_score('ab', 'at'))\""
 
 on_success:
