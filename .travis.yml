@@ -41,7 +41,7 @@ install:
   - python --version
 
   # Download release distribution file
-  - wget http://pages.cs.wisc.edu/~paulgc/py_stringmatching-0.1.1.tar.gz
+  - wget http://pages.cs.wisc.edu/~paulgc/py_stringmatching-0.1.0.tar.gz
 
   # Unzip file
   - tar -xvzf py_stringmatching-0.1.1.tar.gz
