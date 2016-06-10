@@ -24,10 +24,10 @@ install:
   - appveyor DownloadFile http://pages.cs.wisc.edu/~paulgc/py_stringmatching-0.1.0.zip
 
   # Unzip file
-  - 7z x py_stringmatching-0.1.1.zip
+  - 7z x py_stringmatching-0.1.0.zip
   
   # install package
-  - cd py_stringmatching-0.1.1
+  - cd py_stringmatching-0.1.0
   - python setup.py install
 
 build: false
