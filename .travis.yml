@@ -42,7 +42,7 @@ install:
 
   # Download release distribution file
 #  - wget http://pages.cs.wisc.edu/~paulgc/py_stringmatching-0.1.0.tar.gz
-  - pip install py_stringmatching
+  - sudo pip install py_stringmatching
 
   # Unzip file
 #  - tar -xvzf py_stringmatching-0.1.0.tar.gz
