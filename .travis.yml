@@ -43,15 +43,15 @@ install:
   - $HOME/miniconda/bin/python --version
 
   # Download release distribution file
-  - wget http://pages.cs.wisc.edu/~paulgc/py_stringmatching-0.2.0.tar.gz
-#  - sudo pip install py_stringmatching
+#  - wget http://pages.cs.wisc.edu/~paulgc/py_stringmatching-0.2.0.tar.gz
+  - $HOME/miniconda/bin/pip install py_stringmatching
 
   # Unzip file
-  - tar -xvzf py_stringmatching-0.2.0.tar.gz
+#  - tar -xvzf py_stringmatching-0.2.0.tar.gz
 
   # install package
-  - cd py_stringmatching-0.2.0
-  - $HOME/miniconda/bin/python setup.py install
+#  - cd py_stringmatching-0.2.0
+#  - $HOME/miniconda/bin/python setup.py install
 
 script:
   # test package
@@ -60,4 +60,4 @@ script:
   - cd $HOME
   - pwd
   - ls
-  - "$HOME/miniconda/bin/python -c \"import py_stringmatching as sm; ed = sm.Levenshtein(); print(ed.get_raw_score('ab', 'at'))\""
+  - "$HOME/miniconda/bin/python -c \"import py_stringmatching as sm; q = sm.QgramTokenizer(); print(q.get_prefix_pad())\""

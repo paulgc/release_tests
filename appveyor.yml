@@ -21,15 +21,15 @@ install:
   - python -m pip install --upgrade pip
 
   # Download release distribution file
-  - appveyor DownloadFile http://pages.cs.wisc.edu/~paulgc/py_stringmatching-0.2.0.zip
+#  - appveyor DownloadFile http://pages.cs.wisc.edu/~paulgc/py_stringmatching-0.2.0.zip
 
   # Unzip file
-  - 7z x py_stringmatching-0.2.0.zip
+#  - 7z x py_stringmatching-0.2.0.zip
   
   # install package
-  - cd py_stringmatching-0.2.0
-  - python setup.py install
-#  - pip install py_stringmatching 
+#  - cd py_stringmatching-0.2.0
+#  - python setup.py install
+  - pip install py_stringmatching 
 
 build: false
 
@@ -38,7 +38,7 @@ test_script:
   - "cd C:\\Python%PYTHON%"
   - cd
   - dir
-  - "python -c \"import py_stringmatching as sm; ed = sm.Levenshtein(); print(ed.get_raw_score('ab', 'at'))\""
+  - "python -c \"import py_stringmatching as sm; q = sm.QgramTokenizer(); print(q.get_prefix_pad())\""
 
 on_success:
   - echo Test succesful!
