@@ -36,7 +36,7 @@ before_install:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then wget https://repo.continuum.io/miniconda/Miniconda2-4.0.5-MacOSX-x86_64.sh -O miniconda.sh; fi
   - bash miniconda.sh -b -p $HOME/miniconda
   - export PATH="$HOME/miniconda/bin:$PATH"
-########  - conda update --yes conda
+#########  - conda update --yes conda
 
 install:
   - conda install --yes python=$PYTHON_VERSION
