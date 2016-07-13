@@ -44,14 +44,15 @@ install:
 
   # Download release distribution file
   - wget http://pages.cs.wisc.edu/~paulgc/py_stringsimjoin-0.1.0.tar.gz
+  - $HOME/miniconda/bin/pip install py_stringsimjoin-0.1.0.tar.gz 
 #  - $HOME/miniconda/bin/pip install py_stringmatching
 
   # Unzip file
-  - tar -xvzf py_stringsimjoin-0.1.0.tar.gz
+#  - tar -xvzf py_stringsimjoin-0.1.0.tar.gz
 
   # install package
-  - cd py_stringsimjoin-0.1.0
-  - $HOME/miniconda/bin/python setup.py install
+#  - cd py_stringsimjoin-0.1.0
+#  - $HOME/miniconda/bin/python setup.py install
 
 script:
   # test package
