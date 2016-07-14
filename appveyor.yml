@@ -8,7 +8,7 @@ environment:
       CONDA_PY: "27"
 
 install:
-  # this installs the appropriate Miniconda (Py2/Py3, 32/64 bit)
+  ## this installs the appropriate Miniconda (Py2/Py3, 32/64 bit)
   - powershell .\\continuous-integration\\appveyor\\install.ps1
   - "SET PATH=%PYTHON%;%PYTHON%\\Scripts;C:\\Program Files (x86)\\Microsoft Visual Studio 10.0\\VC\\INCLUDE;C:\\Program Files (x86)\\Microsoft Visual Studio 10.0\\VC\\bin\\amd64;%PATH%"
   - echo "C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin\SetEnv.cmd" /x64 > "C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\amd64/vcvars64.bat"
