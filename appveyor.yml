@@ -15,6 +15,13 @@ install:
   - dir "C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC"
   - dir "C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\INCLUDE"
   - "SET INCLUDE=C:\\Program Files (x86)\\Microsoft Visual Studio 10.0\\VC\\INCLUDE;%INCLUDE%"
+  - "SET INCLUDE=C:\\Program Files (x86)\\Microsoft Visual Studio 10.0\\VC\\INCLUDE\\sys;%INCLUDE%"
+  - "SET INCLUDE=C:\\Program Files (x86)\\Microsoft Visual Studio 10.0\\VC\\INCLUDE\\msclr;%INCLUDE%"
+  - "SET INCLUDE=C:\\Program Files (x86)\\Microsoft Visual Studio 10.0\\VC\\INCLUDE\\Manifest;%INCLUDE%"
+  - "SET INCLUDE=C:\\Program Files (x86)\\Microsoft Visual Studio 10.0\\VC\\INCLUDE\\cvt;%INCLUDE%"
+  - "SET INCLUDE=C:\\Program Files (x86)\\Microsoft Visual Studio 10.0\\VC\\INCLUDE\\CodeAnalysis;%INCLUDE%"
+  - "SET INCLUDE=C:\\Program Files (x86)\\Microsoft Visual Studio 10.0\\VC\\INCLUDE\\cliext;%INCLUDE%"
+
   # Don't install from requirements-pip.txt, python-coveralls has broken dependencies on windows it seems.
 #  - conda install --yes setuptools nose numpy pip coverage scipy pandas pyparsing six scikit-learn Cython pyqt cloudpickle joblib
 #  - pip install pyprind
