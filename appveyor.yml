@@ -19,10 +19,11 @@ install:
 
   # Install pip
   - python -m pip install --upgrade pip
+  - pip install dummy_package1
 
   # Download release distribution file
-  - appveyor DownloadFile http://pages.cs.wisc.edu/~paulgc/py_stringsimjoin-0.1.0.zip
-  - pip install py_stringsimjoin-0.1.0.zip
+#  - appveyor DownloadFile http://pages.cs.wisc.edu/~paulgc/py_stringsimjoin-0.1.0.zip
+#  - pip install py_stringsimjoin-0.1.0.zip
   # Unzip file
 #  - 7z x py_stringmatching-0.2.0.zip
 #  - 7z x py_stringsimjoin-0.1.0.zip
@@ -40,7 +41,8 @@ test_script:
   - cd
   - dir
 #  - "python -c \"import py_stringmatching as sm; q = sm.QgramTokenizer(); print(q.get_prefix_pad())\""
-  - "python -c \"import py_stringsimjoin as ssj; print(ssj.get_install_path())\""
+  - "python -c \"import dummy_package1 as ssj; print(ssj.get_install_path())\""
+  - "python -c \"import dummy_package as sm; q = sm.QgramTokenizer(); print(q.get_prefix_pad())\""
 
 on_success:
   - echo Test succesful!

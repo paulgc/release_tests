@@ -41,10 +41,11 @@ before_install:
 install:
   - conda install --yes python=$PYTHON_VERSION
   - $HOME/miniconda/bin/python --version
+  - conda install -c paulgc dummy_package1
 
   # Download release distribution file
-  - wget http://pages.cs.wisc.edu/~paulgc/py_stringsimjoin-0.1.0.tar.gz
-  - $HOME/miniconda/bin/pip install py_stringsimjoin-0.1.0.tar.gz 
+#  - wget http://pages.cs.wisc.edu/~paulgc/py_stringsimjoin-0.1.0.tar.gz
+#  - $HOME/miniconda/bin/pip install py_stringsimjoin-0.1.0.tar.gz 
 #  - $HOME/miniconda/bin/pip install py_stringmatching
 
   # Unzip file
@@ -61,5 +62,6 @@ script:
   - cd $HOME
   - pwd
   - ls
-  - "$HOME/miniconda/bin/python -c \"import py_stringsimjoin as ssj; print(ssj.get_install_path())\""
+  - "$HOME/miniconda/bin/python -c \"import dummy_package1 as ssj; print(ssj.get_install_path())\""
+  - "$HOME/miniconda/bin/python -c \"import dummy_package as sm; q = sm.QgramTokenizer(); print(q.get_prefix_pad())\""
 #  - "$HOME/miniconda/bin/python -c \"import py_stringmatching as sm; q = sm.QgramTokenizer(); print(q.get_prefix_pad())\""
