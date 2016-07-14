@@ -1,0 +1,48 @@
+environment:
+
+  matrix:
+    - python : 27
+    - python : 27-x64
+    - python : 34
+    - python : 34-x64
+    - python : 35
+    - python : 35-x64
+
+install:
+
+  - "SET PATH=C:\\Python%PYTHON%;c:\\Python%PYTHON%\\scripts;%PATH%"
+  - echo "C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin\SetEnv.cmd" /x64 > "C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\amd64/vcvars64.bat"
+
+  # Check that we have the expected version and architecture for Python
+  - python --version
+  - "python -c \"import struct; print(struct.calcsize('P') * 8)\""
+
+  # Install pip
+  - python -m pip install --upgrade pip
+  - pip install dummy_package1
+
+  # Download release distribution file
+#  - appveyor DownloadFile http://pages.cs.wisc.edu/~paulgc/py_stringsimjoin-0.1.0.zip
+#  - pip install py_stringsimjoin-0.1.0.zip
+  # Unzip file
+#  - 7z x py_stringmatching-0.2.0.zip
+#  - 7z x py_stringsimjoin-0.1.0.zip
+  
+  # install package
+#  - cd py_stringsimjoin-0.1.0
+#  - python setup.py install
+#  - pip install py_stringmatching 
+
+build: false
+
+test_script:
+  # test package
+  - "cd C:\\Python%PYTHON%"
+  - cd
+  - dir
+#  - "python -c \"import py_stringmatching as sm; q = sm.QgramTokenizer(); print(q.get_prefix_pad())\""
+  - "python -c \"import dummy_package1 as ssj; print(ssj.get_install_path())\""
+  - "python -c \"import dummy_package as sm; q = sm.QgramTokenizer(); print(q.get_prefix_pad())\""
+
+on_success:
+  - echo Test succesful!
