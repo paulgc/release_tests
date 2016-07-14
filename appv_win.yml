@@ -1,0 +1,53 @@
+
+environment:
+
+  matrix:
+    - PYTHON: "C:\\Python27_64"
+      PYTHON_VERSION: "2.7"
+      PYTHON_ARCH: "64"
+      CONDA_PY: "27"
+
+install:
+  ## this installs the appropriate Miniconda (Py2/Py3, 32/64 bit)
+  - powershell .\\continuous-integration\\appveyor\\install.ps1
+  - "SET PATH=%PYTHON%;%PYTHON%\\Scripts;C:\\Program Files (x86)\\Microsoft Visual Studio 10.0\\VC\\INCLUDE;C:\\Program Files (x86)\\Microsoft Visual Studio 10.0\\VC\\bin\\amd64;%PATH%"
+  - echo "C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin\SetEnv.cmd" /x64 > "C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\amd64/vcvars64.bat"
+  - dir "C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC"
+  - dir "C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\INCLUDE"
+  - "SET INCLUDE=C:\\Program Files (x86)\\Microsoft Visual Studio 10.0\\VC\\INCLUDE;%INCLUDE%"
+  - "SET INCLUDE=C:\\Program Files (x86)\\Microsoft Visual Studio 10.0\\VC\\INCLUDE\\sys;%INCLUDE%"
+  - "SET INCLUDE=C:\\Program Files (x86)\\Microsoft Visual Studio 10.0\\VC\\INCLUDE\\msclr;%INCLUDE%"
+  - "SET INCLUDE=C:\\Program Files (x86)\\Microsoft Visual Studio 10.0\\VC\\INCLUDE\\Manifest;%INCLUDE%"
+  - "SET INCLUDE=C:\\Program Files (x86)\\Microsoft Visual Studio 10.0\\VC\\INCLUDE\\cvt;%INCLUDE%"
+  - "SET INCLUDE=C:\\Program Files (x86)\\Microsoft Visual Studio 10.0\\VC\\INCLUDE\\CodeAnalysis;%INCLUDE%"
+  - "SET INCLUDE=C:\\Program Files (x86)\\Microsoft Visual Studio 10.0\\VC\\INCLUDE\\cliext;%INCLUDE%"
+
+  # Don't install from requirements-pip.txt, python-coveralls has broken dependencies on windows it seems.
+#  - conda install --yes setuptools nose numpy pip coverage scipy pandas pyparsing six scikit-learn Cython pyqt cloudpickle joblib
+#  - pip install pyprind
+#  - pip install py_stringmatching
+#  - python setup.py install
+  - conda install -y conda-build 
+  - conda upgrade -y conda 
+  - conda upgrade -y conda-build 
+  - conda install -y anaconda-client
+  - conda skeleton pypi dummy_package 
+  - conda build dummy_package
+
+build: false
+
+test_script:
+  # Nosetests take care of unit tests
+  # Behave runs the example scripts and tries to verify if it produces the right output
+  #- nosetests
+  #- behave --tags ~@skip # Everything without the tag @skip
+
+artifacts:
+  # Archive the generated packages in the ci.appveyor.com build report.
+  - path: C:\\Python27_64\\conda-bld\\win-64\\*
+
+on_success:
+  # Could run coveralls here but will leave that to travis tests
+  - echo Build succesful!
+  #- coverage report
+  # coveralls
