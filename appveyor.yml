@@ -17,8 +17,11 @@ install:
 #  - pip install pyprind
 #  - pip install py_stringmatching
 #  - python setup.py install
-  - conda install -y conda-build                                                   - conda upgrade -y conda                                                         - conda upgrade -y conda-build                                                   - conda install -y anaconda-client
-  - conda skeleton pypi dummy_package
+  - conda install -y conda-build 
+  - conda upgrade -y conda 
+  - conda upgrade -y conda-build 
+  - conda install -y anaconda-client
+  - conda skeleton pypi dummy_package 
   - conda build dummy_package
 
 build: false
