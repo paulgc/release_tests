@@ -14,6 +14,7 @@ install:
   - echo "C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin\SetEnv.cmd" /x64 > "C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\amd64/vcvars64.bat"
   - dir "C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC"
   - dir "C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\INCLUDE"
+  - "SET INCLUDE=C:\\Program Files (x86)\\Microsoft Visual Studio 10.0\\VC\\INCLUDE;%INCLUDE%"
   # Don't install from requirements-pip.txt, python-coveralls has broken dependencies on windows it seems.
 #  - conda install --yes setuptools nose numpy pip coverage scipy pandas pyparsing six scikit-learn Cython pyqt cloudpickle joblib
 #  - pip install pyprind
