@@ -30,7 +30,8 @@ install:
   
   # install package
   - cd py_stringmatching-0.2.1
-  - python setup.py install
+  - easy_install .
+#  - python setup.py install
 #  - pip install py_stringmatching 
 
 build: false
