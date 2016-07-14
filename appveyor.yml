@@ -12,7 +12,8 @@ install:
   - powershell .\\continuous-integration\\appveyor\\install.ps1
   - "SET PATH=%PYTHON%;%PYTHON%\\Scripts;C:\\Program Files (x86)\\Microsoft Visual Studio 10.0\\VC\\INCLUDE;C:\\Program Files (x86)\\Microsoft Visual Studio 10.0\\VC\\bin\\amd64;%PATH%"
   - echo "C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin\SetEnv.cmd" /x64 > "C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\amd64/vcvars64.bat"
-
+  - dir C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC
+  - dir C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\INCLUDE
   # Don't install from requirements-pip.txt, python-coveralls has broken dependencies on windows it seems.
 #  - conda install --yes setuptools nose numpy pip coverage scipy pandas pyparsing six scikit-learn Cython pyqt cloudpickle joblib
 #  - pip install pyprind
