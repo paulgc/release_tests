@@ -41,7 +41,7 @@ before_install:
 install:
   - conda install --yes python=$PYTHON_VERSION
   - $HOME/miniconda/bin/python --version
-  - conda install -c paulgc dummy_package1
+  - conda install -y -c paulgc dummy_package1
 
   # Download release distribution file
 #  - wget http://pages.cs.wisc.edu/~paulgc/py_stringsimjoin-0.1.0.tar.gz
