@@ -45,15 +45,15 @@ install:
 
   # Download release distribution file
   - wget http://pages.cs.wisc.edu/~paulgc/py_stringmatching-0.2.1.tar.gz
-#  - $HOME/miniconda/bin/pip install py_stringsimjoin-0.1.0.tar.gz 
+  - $HOME/miniconda/bin/pip install py_stringmatching-0.2.1.tar.gz 
 #  - $HOME/miniconda/bin/pip install py_stringmatching
 
   # Unzip file
-  - tar -xvzf py_stringmatching-0.2.1.tar.gz
+#  - tar -xvzf py_stringmatching-0.2.1.tar.gz
 
   # install package
-  - cd py_stringmatching-0.2.1
-  - $HOME/miniconda/bin/easy_install .
+#  - cd py_stringmatching-0.2.1
+#  - $HOME/miniconda/bin/easy_install .
 #  - $HOME/miniconda/bin/python setup.py install
 
 script:
