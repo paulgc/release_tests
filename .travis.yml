@@ -53,8 +53,8 @@ install:
 
   # install package
   - cd py_stringsimjoin-0.1.0
-#  - $HOME/miniconda/bin/easy_install .
-  - $HOME/miniconda/bin/python setup.py install
+  - $HOME/miniconda/bin/easy_install .
+#  - $HOME/miniconda/bin/python setup.py install
 
 script:
   # test package

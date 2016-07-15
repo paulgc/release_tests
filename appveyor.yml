@@ -30,8 +30,8 @@ install:
   
   # install package
   - cd py_stringsimjoin-0.1.0
-#  - easy_install .
-  - python setup.py install
+  - easy_install .
+#  - python setup.py install
 #  - pip install py_stringmatching 
 
 build: false
