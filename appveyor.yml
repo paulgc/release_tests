@@ -23,15 +23,15 @@ install:
 
   # Download release distribution file
   - appveyor DownloadFile http://pages.cs.wisc.edu/~paulgc/py_stringsimjoin-0.1.0.zip
-  - pip install py_stringsimjoin-0.1.0.zip
+#  - pip install py_stringsimjoin-0.1.0.zip
   # Unzip file
 #  - 7z x py_stringmatching-0.2.1.zip
-#  - 7z x py_stringsimjoin-0.1.0.zip
+  - 7z x py_stringsimjoin-0.1.0.zip
   
   # install package
-#  - cd py_stringmatching-0.2.1
+  - cd py_stringsimjoin-0.1.0
 #  - easy_install .
-#  - python setup.py install
+  - python setup.py install
 #  - pip install py_stringmatching 
 
 build: false
