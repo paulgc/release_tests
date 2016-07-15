@@ -44,8 +44,8 @@ install:
 #  - conda install -y -c paulgc dummy_package1
 
   # Download release distribution file
-  - wget http://pages.cs.wisc.edu/~paulgc/py_stringmatching-0.2.1.tar.gz
-  - $HOME/miniconda/bin/pip install py_stringmatching-0.2.1.tar.gz 
+  - wget http://pages.cs.wisc.edu/~paulgc/py_stringsimjoin-0.1.0.tar.gz
+  - $HOME/miniconda/bin/pip install py_stringsimjoin-0.1.0.tar.gz 
 #  - $HOME/miniconda/bin/pip install py_stringmatching
 
   # Unzip file
@@ -63,7 +63,8 @@ script:
   - cd $HOME
   - pwd
   - ls
-#  - "$HOME/miniconda/bin/python -c \"import dummy_package1 as ssj; print(ssj.get_install_path())\""
+  - "$HOME/miniconda/bin/python -c \"import py_stringsimjoin as ssj; print(ssj.get_install_path())\""
+  - "$HOME/miniconda/bin/python -c \"import py_stringsimjoin as ssj; A, B = ssj.load_person_dataset(); C = ssj.edit_distance_join(A, B, 'A.id', 'B.id', 'A.name', 'B.name', 5); print(len(C))\""
 #  - "$HOME/miniconda/bin/python -c \"import dummy_package as sm; q = sm.QgramTokenizer(); print(q.get_prefix_pad())\""
   - "$HOME/miniconda/bin/python -c \"import py_stringmatching as sm; print(sm.__version__)\""
   - "$HOME/miniconda/bin/python -c \"import py_stringmatching as sm; l = sm.Levenshtein(); print(l.get_raw_score('ag', 'dg'))\""

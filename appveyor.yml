@@ -22,8 +22,8 @@ install:
 #  - pip install dummy_package1
 
   # Download release distribution file
-  - appveyor DownloadFile http://pages.cs.wisc.edu/~paulgc/py_stringmatching-0.2.1.zip
-  - pip install py_stringmatching-0.2.1.zip
+  - appveyor DownloadFile http://pages.cs.wisc.edu/~paulgc/py_stringsimjoin-0.1.0.zip
+  - pip install py_stringsimjoin-0.1.0.zip
   # Unzip file
 #  - 7z x py_stringmatching-0.2.1.zip
 #  - 7z x py_stringsimjoin-0.1.0.zip
@@ -41,6 +41,8 @@ test_script:
   - "cd C:\\Python%PYTHON%"
   - cd
   - dir
+  - "python -c \"import py_stringsimjoin as ssj; print(ssj.get_install_path())\""
+  - "python -c \"import py_stringsimjoin as ssj; A, B = ssj.load_person_dataset(); C = ssj.edit_distance_join(A, B, 'A.id', 'B.id', 'A.name', 'B.name', 5); print(len(C))\""
   - "python -c \"import py_stringmatching as sm; print(sm.__version__)\""
   - "python -c \"import py_stringmatching as sm; l = sm.Levenshtein(); print(l.get_raw_score('ag', 'dg'))\""
   - "python -c \"import py_stringmatching as sm; q = sm.QgramTokenizer(); print(q.get_prefix_pad())\""
